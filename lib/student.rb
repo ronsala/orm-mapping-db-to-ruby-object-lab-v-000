@@ -73,9 +73,7 @@ class Student
       student.grade = tenth[i][2]
       students << student
     end
-    students
-    # binding.pry
-    # students(0..x)
+    students(0..x)
   end
 
   def save
