@@ -65,7 +65,7 @@ class Student
   end
 
   def self.first_X_students_in_grade_10(x)
-    students = []
+    @students = []
     tenth = DB[:conn].execute("SELECT * FROM students WHERE grade = 10")
     tenth.each_with_index do |s, i|
       student = self.new
