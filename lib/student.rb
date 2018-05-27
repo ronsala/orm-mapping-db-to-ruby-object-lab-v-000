@@ -83,7 +83,7 @@ class Student
 
   def self.all_students_in_grade_X(x)
     students = []
-    students_in_grade_x = DB[:conn].execute("SELECT * FROM students WHERE grade = x")
+    students_in_grade_x = DB[:conn].execute("SELECT * FROM students WHERE grade = #{x}")
     students_in_grade_x.each_with_index do |s, i|
       student = self.new
       student.id = students_in_grade_x[i][0]
