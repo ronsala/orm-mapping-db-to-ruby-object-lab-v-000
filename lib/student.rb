@@ -77,6 +77,10 @@ class Student
     @students[0..(x - 1)]
   end
 
+  def.first_student_in_grade_10
+
+  end
+
   def save
     sql = <<-SQL
       INSERT INTO students (name, grade)
