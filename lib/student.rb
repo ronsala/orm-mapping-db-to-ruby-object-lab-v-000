@@ -22,19 +22,19 @@ class Student
     student
   end
 
-#   def self.count_all_students_in_grade_9
-#     students = []
-#     ninth = DB[:conn].execute("SELECT * FROM students WHERE grade = 9")
-#     ninth.each do |s|
-#       student = self.new
-#       student.id = ninth[0][0]
-#       student.name = ninth[0][1]
-#       student.grade = ninth[0][2]
-#       students << student
-#     end
-#     students
-#   end
-#
+  def self.count_all_students_in_grade_9
+    students = []
+    ninth = DB[:conn].execute("SELECT * FROM students WHERE grade = 9")
+    ninth.each do |s|
+      student = self.new
+      student.id = ninth[0][0]
+      student.name = ninth[0][1]
+      student.grade = ninth[0][2]
+      students << student
+    end
+    students
+  end
+
 #   def self.students_below_12th_grade
 #     students = []
 #     all_but_12th = DB[:conn].execute("SELECT * FROM students WHERE grade < 12")
