@@ -1,6 +1,6 @@
-# require 'pry'
-#
-# class Student
+require 'pry'
+
+class Student
 #   attr_accessor :id, :name, :grade
 #
 #   def self.new_from_db(row)
@@ -105,4 +105,4 @@
 #     sql = "DROP TABLE IF EXISTS students"
 #     DB[:conn].execute(sql)
 #   end
-# end
+end
