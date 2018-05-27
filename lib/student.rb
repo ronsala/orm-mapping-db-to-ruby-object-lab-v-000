@@ -2,6 +2,7 @@ require 'pry'
 
 class Student
   attr_accessor :id, :name, :grade
+  attr_reader :students
 
   def self.new_from_db(row)
     student = self.new
@@ -71,9 +72,9 @@ class Student
       student.id = tenth[i][0]
       student.name = tenth[i][1]
       student.grade = tenth[i][2]
-      students << student
+      @students << student
     end
-    students(0..x)
+    @students(0..x)
   end
 
   def save
