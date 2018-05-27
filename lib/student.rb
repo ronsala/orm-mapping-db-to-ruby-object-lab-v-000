@@ -78,7 +78,7 @@ class Student
   end
 
   def.first_student_in_grade_10
-
+    @students.[0]
   end
 
   def save
