@@ -47,21 +47,21 @@ class Student
     end
     students
   end
-#
-#   def self.all
-#     # retrieve all the rows from the "Students" database
-#     # remember each row should be a new instance of the Student class
-#     students = []
-#     all_students = DB[:conn].execute("SELECT * FROM students")
-#     all_students.each_with_index do |s, i|
-#       student = self.new
-#       student.id = all_students[i][0]
-#       student.name = all_students[i][1]
-#       student.grade = all_students[i][2]
-#       students << student
-#     end
-#     students
-#   end
+
+  def self.all
+    # retrieve all the rows from the "Students" database
+    # remember each row should be a new instance of the Student class
+    students = []
+    all_students = DB[:conn].execute("SELECT * FROM students")
+    all_students.each_with_index do |s, i|
+      student = self.new
+      student.id = all_students[i][0]
+      student.name = all_students[i][1]
+      student.grade = all_students[i][2]
+      students << student
+    end
+    students
+  end
 #
 #   # def self.first_X_students_in_grade_10(x)
 #   #   students = []
