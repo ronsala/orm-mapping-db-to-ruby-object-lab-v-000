@@ -62,47 +62,45 @@ class Student
     end
     students
   end
-#
-#   # def self.first_X_students_in_grade_10(x)
-#   #   students = []
-#   #   tenth = DB[:conn].execute("SELECT * FROM students WHERE grade = 10")
-#   #   tenth.each_with_index do |s, i|
-#   #     student = self.new
-#   #     student.id = tenth[i][0]
-#   #     student.name = tenth[i][1]
-#   #     student.grade = tenth[i][2]
-#   #     students << student
-#   #   end
-#   #   students
-#   #   # binding.pry
-#   #   # students(0..x)
-#   # end
-#
-#   end
-#
-#   def save
-#     sql = <<-SQL
-#       INSERT INTO students (name, grade)
-#       VALUES (?, ?)
-#     SQL
-#
-#     DB[:conn].execute(sql, self.name, self.grade)
-#   end
-#
-#   def self.create_table
-#     sql = <<-SQL
-#     CREATE TABLE IF NOT EXISTS students (
-#       id INTEGER PRIMARY KEY,
-#       name TEXT,
-#       grade TEXT
-#     )
-#     SQL
-#
-#     DB[:conn].execute(sql)
-#   end
-#
-#   def self.drop_table
-#     sql = "DROP TABLE IF EXISTS students"
-#     DB[:conn].execute(sql)
-#   end
+
+  def self.first_X_students_in_grade_10(x)
+    students = []
+    tenth = DB[:conn].execute("SELECT * FROM students WHERE grade = 10")
+    tenth.each_with_index do |s, i|
+      student = self.new
+      student.id = tenth[i][0]
+      student.name = tenth[i][1]
+      student.grade = tenth[i][2]
+      students << student
+    end
+    students
+    # binding.pry
+    # students(0..x)
+  end
+
+  def save
+    sql = <<-SQL
+      INSERT INTO students (name, grade)
+      VALUES (?, ?)
+    SQL
+
+    DB[:conn].execute(sql, self.name, self.grade)
+  end
+
+  def self.create_table
+    sql = <<-SQL
+    CREATE TABLE IF NOT EXISTS students (
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      grade TEXT
+    )
+    SQL
+
+    DB[:conn].execute(sql)
+  end
+
+  def self.drop_table
+    sql = "DROP TABLE IF EXISTS students"
+    DB[:conn].execute(sql)
+  end
 end
